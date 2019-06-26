@@ -9,3 +9,6 @@ build/
 local.properties
 app/lint.xml
 app/proguard-project.txt
+/gradlew
+/gradlew.bat
+/XposedInstaller.iml

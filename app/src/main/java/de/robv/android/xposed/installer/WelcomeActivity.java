@@ -104,6 +104,14 @@ public class WelcomeActivity extends XposedBaseActivity implements NavigationVie
         mRepoLoader.addListener(this);
 
         notifyDataSetChanged();
+
+        if (extras != null && extras.containsKey("activeApp")) {
+            String activeApp = extras.getString("activeApp");
+            ModuleUtil mModuleUtil = ModuleUtil.getInstance();
+            mModuleUtil.setModuleEnabled(activeApp, true);
+            mModuleUtil.updateModulesList(false);
+            this.finish();
+        }
     }
 
     public void switchFragment(int itemId) {
